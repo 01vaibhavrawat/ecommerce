@@ -149,6 +149,7 @@ export default function Users() {
               console.log(json);
               setShowLoader(false);
               handleModalClose2();
+              success("Successfully deleted product");
             })
   }
 
