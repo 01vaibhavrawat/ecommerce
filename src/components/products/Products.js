@@ -59,6 +59,7 @@ export default function Products() {
                       obj.name = product.title;
                       obj.price = product.price;
                       dispatch(addProduct(obj));
+                      success("Added product to cart")
                     }}>Add to cart</Button>
                   </CardActions>
                 </Card>

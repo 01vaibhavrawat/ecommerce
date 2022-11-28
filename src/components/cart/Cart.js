@@ -5,6 +5,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import { useDispatch, useSelector } from "react-redux";
 import { removeProduct, clearCart } from "../../redux/cartSlice";
+import {error} from "../../App"
 
 const style = {
   width: '100%',
@@ -28,7 +29,11 @@ export default function ListDividers() {
           <ListItem key={index} button>
             <ListItemText primary={item.name} />
             <ListItemText primary={item.price} />
-            <ListItemText onClick={()=> dispatch(removeProduct(index))} sx={{marginLeft: 10}} primary="remove item" />
+            <ListItemText onClick={()=> {
+              dispatch(removeProduct(index));
+              error("Item removed from the cart")
+                }}
+               sx={{marginLeft: 10}} primary="remove item" />
           </ListItem>
           <Divider />
           </React.Fragment>
